@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { Navbar, Nav, FormControl, Dropdown, Badge, ListGroup, Media } from 'react-bootstrap'
 import layoutHelpers from './helpers'
 import logo from '../../img/logoDash.png'
@@ -185,7 +185,7 @@ class LayoutNavbar extends Component {
                 <Dropdown.Item hred="#"><i className="ion ion-ios-person text-lightest"></i> &nbsp; Meu perfil</Dropdown.Item>
                 <Dropdown.Item hred="#"><i className="ion ion-md-settings text-lightest"></i> &nbsp; Configurações</Dropdown.Item>
                 <Dropdown.Divider />
-                <Dropdown.Item hred="#"><i className="ion ion-ios-log-out text-danger"></i> &nbsp; Sair</Dropdown.Item>
+                <Link to='/'><Dropdown.Item ><i className="ion ion-ios-log-out text-danger"></i> &nbsp; Sair</Dropdown.Item></Link>
               </Dropdown.Menu>
             </Dropdown>
           </Nav>

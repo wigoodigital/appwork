@@ -123,7 +123,17 @@ export const routes = [
     layout: LayoutBlank
   },
   {
-    path: '/senha',
+    path: '/aluno',
+    component: lazy(() => import('./components/pages/justfit-user-profile')),
+    layout: LayoutWithoutSidenav
+  },
+  {
+    path: '/aluno/atualizar',
+    component: lazy(() => import('./components/pages/justfit-user-edit')),
+    layout: LayoutBlank
+  },
+  {
+    path: '/recuperar',
     component: lazy(() => import('./components/pages/justfit-recover-password')),
     layout: LayoutBlank
   },

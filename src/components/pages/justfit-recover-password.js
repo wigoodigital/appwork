@@ -71,8 +71,8 @@ class justfitRecoverPassword extends Component {
                     </Form.Label>
                     <Form.Control type="email" value={this.state.credentials.email} onChange={e => this.onValueChange('email', e)} />
                   </Form.Group>
-                  <div className="d-flex align-items-center justify-content-around m-0">
-                     <Button variant="custom">Enviar o link</Button>
+                  <div className="d-flex flex-column m-12">
+                     <Button className="align-self-stretch" md={12} variant="custom">Enviar link</Button>
                   </div>
           
                 </Form>

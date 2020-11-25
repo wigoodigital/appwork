@@ -34,7 +34,7 @@ class LayoutWithoutSidenav extends Component {
                 {this.props.children}
               </div>
 
-              <LayoutFooter {...this.props} />
+              {/* <LayoutFooter {...this.props} /> */}
             </div>
           </div>
         </div>

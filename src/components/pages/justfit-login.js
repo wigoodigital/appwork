@@ -73,8 +73,8 @@ class justfitLogin extends Component {
                   <Form.Group>
                     <Form.Label className="d-flex justify-content-between align-items-end">
                       <div>Senha</div>
-                      <Link to="/senha">
-                      <a href="#d" renderAs='button' onClick={this.prevent} className="d-block small justfit-color">Esqueceu sua senha?</a>
+                      <Link to="/recuperar">
+                      <a href="#d" renderAs='button' className="d-block small justfit-color">Esqueceu sua senha?</a>
                       </Link>
                     </Form.Label>
                     <Form.Control type="password" value={this.state.credentials.password} onChange={e => this.onValueChange('password', e)} />
@@ -82,7 +82,7 @@ class justfitLogin extends Component {
 
                   <div className="d-flex justify-content-between align-items-center m-0">
                     <Form.Check type="checkbox" custom checked={this.state.credentials.rememberMe} onChange={e => this.onValueChange('rememberMe', e)} label="Lembrar-me" className="m-0 input-whitex" id="login-remember-me" />
-                    <Button variant="custom">Entrar</Button>
+                     <Link to="/dashboard"> <Button variant="custom" >Entrar</Button></Link>
                   </div>
                 </Form>
                 {/* / Form */}

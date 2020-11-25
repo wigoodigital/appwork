@@ -9,6 +9,7 @@ import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit'
 import BootstrapTable from 'react-bootstrap-table-next'
 import paginationFactory from 'react-bootstrap-table2-paginator'
 import '../../vendor/libs/react-bootstrap-table2/react-bootstrap-table2.scss'
+import { Link, NavLink } from 'react-router-dom'
 
 const { SearchBar } = Search
 
@@ -61,7 +62,8 @@ class justfitDashboard extends Component {
         text: 'Nome do Aluno',
         dataField: 'name',
         sort: true,
-        classes: 'align-middle'
+        classes: 'align-middle',
+        formatter: (cell, row) => <Link as={NavLink} to="/aluno" >{row.name}</Link>
       },
       
     //   {
@@ -119,8 +121,8 @@ class justfitDashboard extends Component {
       sort: true,
       classes: 'align-middle',
       formatter: (cell, row) => <React.Fragment>
-        {row.status === 1 && <Badge variant="outline-success">Ativo</Badge>}
-        {row.status === 2 && <Badge variant="outline-danger">Inativo</Badge>}
+        {row.status === 1 && <Badge className='text-success'>Ativo</Badge>}
+        {row.status === 2 && <Badge className='text-danger'>Inativo</Badge>}
       </React.Fragment>
     },]
 
