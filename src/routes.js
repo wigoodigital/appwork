@@ -13,6 +13,7 @@ import LayoutWithoutSidenav from './shared/layouts/LayoutWithoutSidenav'
 import LayoutWithoutNavbar from './shared/layouts/LayoutWithoutNavbar'
 import LayoutWithoutNavbarFlex from './shared/layouts/LayoutWithoutNavbarFlex'
 import LayoutBlank from './shared/layouts/LayoutBlank'
+import JustFitLogin from './shared/Justfit/login-screen'
 
 // Lazy load component
 const lazy = (cb) => loadable(() => pMinDelay(cb(), 200), { fallback: <Loader /> })
@@ -34,9 +35,14 @@ export const titleTemplate = '%s - Appwork'
 // Note: By default all routes use { "exact": true }. To change this
 // behaviour, pass "exact" option explicitly to the route object
 
-export const defaultRoute = '/dashboards/dashboard-1'
+export const defaultRoute = '/'
 export const routes = [
   // Dashboards
+  {
+    path: '/dashboard',
+    component: lazy(() => import('./components/pages/justfit-dashboard')),
+    layout: LayoutWithoutSidenav
+  },
   {
     path: '/dashboards/dashboard-1',
     component: lazy(() => import('./components/dashboards/Dashboard1'))
@@ -55,6 +61,12 @@ export const routes = [
   },
 
   // Layouts
+  
+  {
+    path: '/teste',
+    component: lazy(() => import('./components/layouts/Layout1Example')),
+    layout: JustFitLogin
+  },
   {
     path: '/layouts/options',
     component: lazy(() => import('./components/layouts/LayoutOptions'))
@@ -105,6 +117,16 @@ export const routes = [
   },
 
   // User Interface
+  {
+    path: '/',
+    component: lazy(() => import('./components/pages/justfit-login')),
+    layout: LayoutBlank
+  },
+  {
+    path: '/senha',
+    component: lazy(() => import('./components/pages/justfit-recover-password')),
+    layout: LayoutBlank
+  },
   {
     path: '/ui/buttons',
     component: lazy(() => import('./components/ui/Buttons'))

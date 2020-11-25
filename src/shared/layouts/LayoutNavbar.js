@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { Navbar, Nav, FormControl, Dropdown, Badge, ListGroup, Media } from 'react-bootstrap'
 import layoutHelpers from './helpers'
+import logo from '../../img/logoDash.png'
 
 class LayoutNavbar extends Component {
   constructor(props) {
@@ -22,10 +23,7 @@ class LayoutNavbar extends Component {
 
         {/* Brand demo (see src/demo.css) */}
         <Navbar.Brand as={NavLink} to="/" className="app-brand demo d-lg-none py-0 mr-4">
-          <span className="app-brand-logo demo bg-primary">
-            <svg viewBox="0 0 148 80" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"><defs><linearGradient id="a" x1="46.49" x2="62.46" y1="53.39" y2="48.2" gradientUnits="userSpaceOnUse"><stop stopOpacity=".25" offset="0"></stop><stop stopOpacity=".1" offset=".3"></stop><stop stopOpacity="0" offset=".9"></stop></linearGradient><linearGradient id="e" x1="76.9" x2="92.64" y1="26.38" y2="31.49" xlinkHref="#a"></linearGradient><linearGradient id="d" x1="107.12" x2="122.74" y1="53.41" y2="48.33" xlinkHref="#a"></linearGradient></defs><path style={{fill: '#fff'}} transform="translate(-.1)" d="M121.36,0,104.42,45.08,88.71,3.28A5.09,5.09,0,0,0,83.93,0H64.27A5.09,5.09,0,0,0,59.5,3.28L43.79,45.08,26.85,0H.1L29.43,76.74A5.09,5.09,0,0,0,34.19,80H53.39a5.09,5.09,0,0,0,4.77-3.26L74.1,35l16,41.74A5.09,5.09,0,0,0,94.82,80h18.95a5.09,5.09,0,0,0,4.76-3.24L148.1,0Z"></path><path transform="translate(-.1)" d="M52.19,22.73l-8.4,22.35L56.51,78.94a5,5,0,0,0,1.64-2.19l7.34-19.2Z" fill="url(#a)"></path><path transform="translate(-.1)" d="M95.73,22l-7-18.69a5,5,0,0,0-1.64-2.21L74.1,35l8.33,21.79Z" fill="url(#e)"></path><path transform="translate(-.1)" d="M112.73,23l-8.31,22.12,12.66,33.7a5,5,0,0,0,1.45-2l7.3-18.93Z" fill="url(#d)"></path></svg>
-          </span>
-          <span className="app-brand-text demo font-weight-normal ml-2">Appwork</span>
+          <img src={logo}></img>
         </Navbar.Brand>
 
         {/* Sidenav toggle (see src/demo.css) */}
@@ -46,15 +44,15 @@ class LayoutNavbar extends Component {
           <Nav className="align-items-lg-center">
             {/* Search */}
             <label className="nav-item navbar-text navbar-search-box p-0 active">
-              <i className="ion ion-ios-search navbar-icon align-middle"></i>
-              <span className="navbar-search-input pl-2">
+              {/* <i className="ion ion-ios-search navbar-icon align-middle"></i> */}
+              {/* <span className="navbar-search-input pl-2">
                 <FormControl className="navbar-text mx-2" placeholder="Search..." style={{width: '200px'}} />
-              </span>
+              </span> */}
             </label>
           </Nav>
 
           <Nav className="align-items-lg-center ml-auto">
-            <Dropdown as={Nav.Item} className="demo-navbar-notifications mr-lg-3" alignRight={!this.isRTL}>
+            {/* <Dropdown as={Nav.Item} className="demo-navbar-notifications mr-lg-3" alignRight={!this.isRTL}>
               <Dropdown.Toggle as={Nav.Link} className="hide-arrow">
                 <i className="ion ion-md-notifications-outline navbar-icon align-middle"></i>
                 <Badge variant="primary badge-dot indicator"></Badge>
@@ -170,7 +168,7 @@ class LayoutNavbar extends Component {
 
                 <a href="#link" className="d-block text-center text-light small p-2 my-1" onClick={e => e.preventDefault()}>Show all messages</a>
               </Dropdown.Menu>
-            </Dropdown>
+            </Dropdown> */}
 
             {/* Divider */}
             <div className="nav-item d-none d-lg-block text-big font-weight-light line-height-1 opacity-25 mr-3 ml-1">|</div>
@@ -179,16 +177,15 @@ class LayoutNavbar extends Component {
               <Dropdown.Toggle as={Nav.Link}>
                 <span className="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
                   <img src={`${process.env.PUBLIC_URL}/img/avatars/1.png`} className="d-block ui-w-30 rounded-circle" alt="User" />
-                  <span className="px-1 mr-lg-2 ml-2 ml-lg-0">Mike Greene</span>
+                  <span className="px-1 mr-lg-2 ml-2 ml-lg-0">José Alberto</span>
                 </span>
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item hred="#"><i className="ion ion-ios-person text-lightest"></i> &nbsp; My profile</Dropdown.Item>
-                <Dropdown.Item hred="#"><i className="ion ion-ios-mail text-lightest"></i> &nbsp; Messages</Dropdown.Item>
-                <Dropdown.Item hred="#"><i className="ion ion-md-settings text-lightest"></i> &nbsp; Account settings</Dropdown.Item>
+                <Dropdown.Item hred="#"><i className="ion ion-ios-person text-lightest"></i> &nbsp; Meu perfil</Dropdown.Item>
+                <Dropdown.Item hred="#"><i className="ion ion-md-settings text-lightest"></i> &nbsp; Configurações</Dropdown.Item>
                 <Dropdown.Divider />
-                <Dropdown.Item hred="#"><i className="ion ion-ios-log-out text-danger"></i> &nbsp; Log Out</Dropdown.Item>
+                <Dropdown.Item hred="#"><i className="ion ion-ios-log-out text-danger"></i> &nbsp; Sair</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </Nav>
